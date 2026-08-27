@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="CHITRAKRAFT BOUTIQUES — Where Tradition Meets Contemporary Style. Discover elegant fashion for women, men and kids.">
+  <title>CHITRAKRAFT BOUTIQUES | Where Tradition Meets Contemporary Style</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: Georgia, "Times New Roman", serif;
+      color: #3f2a20;
+      background: #f8f1e7;
+      line-height: 1.6;
+    }
+    a { color: inherit; text-decoration: none; }
+    .nav {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 20;
+      display: flex; justify-content: space-between; align-items: center;
+      padding: 18px 7%;
+      background: rgba(248,241,231,.94);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid rgba(112,76,48,.15);
+    }
+    .brand {
+      font-size: 1.15rem; letter-spacing: .2em; font-weight: bold;
+    }
+    .brand span { display:block; font-size:.62rem; letter-spacing:.42em; text-align:center; margin-top:2px; }
+    .nav-links { display:flex; gap:28px; font-size:.9rem; }
+    .nav-links a:hover { color:#9a6b3f; }
+    .hero {
+      min-height: 100vh;
+      display:grid; place-items:center;
+      padding: 130px 7% 70px;
+      background:
+        linear-gradient(90deg, rgba(248,241,231,.96) 0%, rgba(248,241,231,.83) 42%, rgba(248,241,231,.35) 100%),
+        radial-gradient(circle at 78% 35%, #ead5bd 0, #f8f1e7 42%, #ead8c5 100%);
+      position:relative; overflow:hidden;
+    }
+    .hero:after {
+      content:""; position:absolute; width:520px; height:520px; border-radius:50%;
+      right:-150px; top:120px; border:1px solid rgba(137,91,48,.18);
+      box-shadow:0 0 0 55px rgba(137,91,48,.035), 0 0 0 110px rgba(137,91,48,.025);
+    }
+    .hero-content { max-width:760px; position:relative; z-index:2; }
+    .eyebrow { text-transform:uppercase; letter-spacing:.35em; font-size:.78rem; color:#96704e; margin-bottom:18px; }
+    h1 { font-size:clamp(3.1rem, 7vw, 6.6rem); line-height:.92; letter-spacing:.03em; margin-bottom:24px; }
+    h1 small { display:block; font-size:.28em; letter-spacing:.55em; margin:18px 0 0 7px; }
+    .hero p { max-width:620px; font-size:1.1rem; color:#6c5545; margin-bottom:32px; }
+    .buttons { display:flex; gap:14px; flex-wrap:wrap; }
+    .btn {
+      display:inline-block; padding:13px 24px; border-radius:2px;
+      border:1px solid #6e4930; transition:.25s;
+      font-family:Arial,sans-serif; font-size:.78rem; font-weight:bold; letter-spacing:.12em; text-transform:uppercase;
+    }
+    .btn.primary { background:#543625; color:#fffaf4; }
+    .btn:hover { transform:translateY(-2px); box-shadow:0 8px 20px rgba(70,42,25,.12); }
+    section { padding:90px 7%; }
+    .section-title { text-align:center; max-width:720px; margin:0 auto 48px; }
+    .section-title h2 { font-size:clamp(2rem,4vw,3.2rem); margin-bottom:12px; }
+    .section-title p { color:#765f50; }
+    .cards { display:grid; grid-template-columns:repeat(3,1fr); gap:22px; max-width:1120px; margin:auto; }
+    .card {
+      min-height:310px; padding:34px; display:flex; flex-direction:column; justify-content:end;
+      border:1px solid rgba(112,76,48,.15);
+      background:linear-gradient(145deg,#efe0cf,#e5ccb2);
+      position:relative; overflow:hidden;
+    }
+    .card:nth-child(2) { background:linear-gradient(145deg,#e8d9c7,#d4c0aa); }
+    .card:nth-child(3) { background:linear-gradient(145deg,#f0dfcf,#dfc0b2); }
+    .card:before {
+      content:""; position:absolute; width:210px;height:210px;border-radius:50%;
+      right:-65px;top:-65px;border:1px solid rgba(76,48,31,.16);
+    }
+    .card .num { font: bold 2.2rem Georgia; opacity:.28; position:absolute; top:22px; left:26px; }
+    .card h3 { font-size:2rem; margin-bottom:8px; position:relative; }
+    .card p { color:#6d5546; position:relative; }
+    .story { background:#eee2d4; }
+    .story-grid { max-width:1050px; margin:auto; display:grid; grid-template-columns:1fr 1fr; gap:55px; align-items:center; }
+    .frame {
+      min-height:430px; border:1px solid #b99a7a; padding:15px;
+      background:#dcc6ad; display:grid; place-items:center;
+    }
+    .frame-inner {
+      width:100%; height:100%; min-height:398px; display:grid; place-items:center;
+      background:linear-gradient(135deg,#f5e9da,#cdb295);
+      font-size:5rem; color:#745038;
+    }
+    .story h2 { font-size:3rem; line-height:1.05; margin-bottom:20px; }
+    .story p { color:#6d5546; margin-bottom:15px; }
+    .values { background:#f8f1e7; }
+    .value-grid { max-width:1050px; margin:auto; display:grid; grid-template-columns:repeat(4,1fr); gap:18px; text-align:center; }
+    .value { padding:25px 15px; border-top:1px solid #c9ad90; }
+    .value strong { display:block; font-size:1.1rem; margin-bottom:8px; }
+    .value p { color:#765f50; font-size:.9rem; }
+    .cta { text-align:center; background:#543625; color:#fff8ef; }
+    .cta p { color:#e7d8c8; max-width:620px; margin:0 auto 25px; }
+    .cta .btn { border-color:#e9d7c2; color:#fff8ef; }
+    footer { padding:28px 7%; text-align:center; font: .78rem Arial,sans-serif; color:#7b6758; background:#eee2d4; }
+    @media(max-width:800px){
+      .nav-links { display:none; }
+      .hero { padding-top:120px; }
+      .cards,.story-grid,.value-grid { grid-template-columns:1fr; }
+      .story-grid { gap:30px; }
+      section { padding:70px 6%; }
+      .frame { min-height:300px; }
+      .frame-inner { min-height:270px; }
+    }
+  </style>
+</head>
+<body>
+
+  <nav class="nav">
+    <a href="#home" class="brand">CHITRAKRAFT<span>BOUTIQUES</span></a>
+    <div class="nav-links">
+      <a href="#collections">Collections</a>
+      <a href="#story">Our Story</a>
+      <a href="#values">Values</a>
+      <a href="#contact">Contact</a>
+    </div>
+  </nav>
+
+  <main>
+    <section class="hero" id="home">
+      <div class="hero-content">
+        <div class="eyebrow">Fashion • Craft • Individuality</div>
+        <h1>CHITRAKRAFT<small>BOUTIQUES</small></h1>
+        <p><em>Where Tradition Meets Contemporary Style.</em><br>
+        Discover fashion designed to celebrate individuality, craftsmanship and timeless elegance — from everyday looks to special occasions.</p>
+        <div class="buttons">
+          <a class="btn primary" href="#collections">Explore Collections</a>
+          <a class="btn" href="#story">Discover Our Story</a>
+        </div>
+      </div>
+    </section>
+
+    <section id="collections">
+      <div class="section-title">
+        <h2>Fashion for Every Moment</h2>
+        <p>Different moments call for different styles. Explore a world of carefully styled fashion for every personality and occasion.</p>
+      </div>
+      <div class="cards">
+        <article class="card">
+          <div class="num">01</div>
+          <h3>Women</h3>
+          <p>Graceful silhouettes, refined details and expressive styles for everyday elegance and celebrations.</p>
+        </article>
+        <article class="card">
+          <div class="num">02</div>
+          <h3>Men</h3>
+          <p>Modern tailoring and traditional influences designed for confident, sophisticated dressing.</p>
+        </article>
+        <article class="card">
+          <div class="num">03</div>
+          <h3>Kids</h3>
+          <p>Charming, comfortable and occasion-ready looks created to make every moment memorable.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="story" id="story">
+      <div class="story-grid">
+        <div class="frame" aria-label="Fashion atelier visual">
+          <div class="frame-inner">✦</div>
+        </div>
+        <div>
+          <div class="eyebrow">The CHITRAKRAFT Vision</div>
+          <h2>Fashion Is More Than What We Wear</h2>
+          <p>At CHITRAKRAFT BOUTIQUES, we believe every outfit has a story to tell.</p>
+          <p>Our vision brings together the beauty of traditional craftsmanship and the elegance of contemporary fashion, creating a boutique experience that feels personal, distinctive and timeless.</p>
+          <p>From thoughtful details to the final look, our goal is simple: help customers find an outfit in which they feel confident.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="values" id="values">
+      <div class="section-title">
+        <h2>What We Stand For</h2>
+        <p>Four ideas shape the CHITRAKRAFT BOUTIQUES experience.</p>
+      </div>
+      <div class="value-grid">
+        <div class="value"><strong>Creativity</strong><p>Fresh ideas with a distinctive point of view.</p></div>
+        <div class="value"><strong>Craftsmanship</strong><p>Attention to detail from fabric to finishing.</p></div>
+        <div class="value"><strong>Elegance</strong><p>Styles that balance heritage and modern taste.</p></div>
+        <div class="value"><strong>Individuality</strong><p>Fashion that lets your personal style lead.</p></div>
+      </div>
+    </section>
+
+    <section class="cta" id="contact">
+      <div class="section-title">
+        <h2>Find Your CHITRAKRAFT Style</h2>
+        <p>Explore fashion that fits your personality, your occasion and your story.</p>
+        <div class="buttons" style="justify-content:center;">
+          <a class="btn" href="mailto:hello@chitrakraftboutiques.com">Get in Touch</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    © 2026 CHITRAKRAFT BOUTIQUES • Where Tradition Meets Contemporary Style
+  </footer>
+
+</body>
+</html>
